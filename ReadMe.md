@@ -30,5 +30,11 @@ This project presents an AR-based anatomy learning application where a 2D textbo
 - Unity (Student Version)  
 - Vuforia SDK  
 - Android Platform  
-- Free/Open-source 3D anatomical models  
+- Free/Open-source 3D anatomical models
+
+## Team Members
+- Tanisha (102315108)
+- Irina Garg (102315221)
+- Vivan Khatri (102315225)
+
 
