@@ -30,14 +30,11 @@ We developed a lightweight AI tutor that:
 - GitHub (Version Control)
 
 
-## Live Demo
-(Insert your Streamlit app link here)
-
 ## Features
 ✔ Organ-specific explanations  
 ✔ Structured anatomy breakdown  
 ✔ Lightweight & fast  
-✔ Fully deployable  
+✔ Working on deployment
 
 
 ## Future Scope
