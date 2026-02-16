@@ -1,70 +1,60 @@
-
-import streamlit as st
-
-st.set_page_config(page_title="Anatomy AI Tutor")
-
-st.title("Anatomy AI Tutor")
-st.write("Ask about: Heart, Brain, Lungs, Liver, Kidneys")
-
-question = st.text_input("Ask your question:")
-
 def anatomy_response(user_input):
     user_input = user_input.lower()
 
     if "heart" in user_input:
         return """
-        HEART:
-        The heart is a muscular organ that pumps blood throughout the body.
-        
-        • Location: Thoracic cavity
-        • Chambers: 4 (Right/Left Atrium, Right/Left Ventricle)
-        • Function: Circulates oxygenated & deoxygenated blood
-        • Major vessels: Aorta, Pulmonary artery, Vena cava
+         HEART:
+
+        The heart is a hollow, muscular organ responsible for pumping blood 
+        throughout the circulatory system. It maintains continuous blood flow 
+        to deliver oxygen and nutrients to tissues and remove carbon dioxide.
+
+        Location:
+        - Middle mediastinum of the thoracic cavity
+        - Slightly tilted toward the left side
+
+         Structure:
+        - Four chambers:
+            • Right Atrium
+            • Right Ventricle
+            • Left Atrium
+            • Left Ventricle
+        - Septum separates right and left sides
+        - Valves:
+            • Tricuspid valve
+            • Pulmonary valve
+            • Mitral (Bicuspid) valve
+            • Aortic valve
+
+        Circulation:
+        - Pulmonary circulation → Heart ↔ Lungs
+        - Systemic circulation → Heart ↔ Body
+
+        Electrical System:
+        - SA node (natural pacemaker)
+        - AV node
+        - Bundle of His & Purkinje fibers
+
+        Major Blood Vessels:
+        - Aorta
+        - Pulmonary arteries
+        - Pulmonary veins
+        - Superior & Inferior vena cava
         """
 
     elif "brain" in user_input:
         return """
-        BRAIN:
-        The brain is the control center of the nervous system.
-        
-        • Parts: Cerebrum, Cerebellum, Brainstem
-        • Function: Controls thoughts, memory, movement
-        • Protected by: Skull & cerebrospinal fluid
-        """
+         BRAIN:
 
-    elif "lungs" in user_input:
-        return """
-        LUNGS:
-        The lungs are responsible for gas exchange.
-        
-        • Function: Oxygen in, Carbon dioxide out
-        • Structure: Bronchi → Bronchioles → Alveoli
-        • Location: Thoracic cavity
-        """
+        The brain is the central control organ of the nervous system. 
+        It regulates voluntary and involuntary functions and enables cognition.
 
-    elif "liver" in user_input:
-        return """
-        LIVER:
-        The liver is the largest internal organ.
-        
-        • Function: Detoxification, metabolism, bile production
-        • Location: Upper right abdomen
-        • Important role in digestion
-        """
+         Location:
+        - Cranial cavity
+        - Protected by skull, meninges, and cerebrospinal fluid
 
-    elif "kidney" in user_input or "kidneys" in user_input:
-        return """
-        KIDNEYS:
-        The kidneys filter blood and produce urine.
-        
-        • Function: Remove waste, balance fluids
-        • Structure: Nephron (functional unit)
-        • Location: Retroperitoneal area
-        """
-
-    else:
-        return "Please ask about Heart, Brain, Lungs, Liver, or Kidneys."
-
-if question:
-    answer = anatomy_response(question)
-    st.success(answer)
+         Major Parts:
+        1. Cerebrum:
+            • Largest part
+            • Controls thinking, memory, speech, voluntary movement
+            • Divided into frontal, parietal, temporal, occipital lobes
