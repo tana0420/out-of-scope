@@ -6,3 +6,4 @@
 6. **[Transforming Clinical Education Through Augmented Reality: Building a Clinical-Grade 3D Learning Platform Website](https://medium.com/p/58e7f0e39428?postPublishedType=initial)**
 7. **[Designing the Anatomy of a Human Heart Using Blender](https://medium.com/@igarg_be23/designing-the-anatomy-of-a-human-heart-using-blender-c16a58121734)**   
 8. **[Challenges We Faced While Integrating 3D Anatomy Models in Unity](https://medium.com/@vivankhat20/challenges-we-faced-while-integrating-3d-anatomy-models-in-unity-c1913754532e)** 
+9. **[Behind the Scenes: A Day in Building a 3D Medical Model](https://medium.com/@vivankhat20/behind-the-scenes-a-day-in-building-a-3d-medical-model-e733307b32ba)**
