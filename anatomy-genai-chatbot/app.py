@@ -1,187 +1,127 @@
-import streamlit as st
+ import streamlit as st
 
+# Page config
+st.set_page_config(page_title="Anatomy AI Tutor", page_icon="🧠")
 
-st.set_page_config(page_title="Anatomy AI Tutor")
-
-st.title("Anatomy AI Tutor")
+st.title(" Anatomy AI Tutor")
 st.write("Ask about: Heart, Brain, Lungs, Liver, or Kidneys")
 
-question = st.text_input("Ask your question:")
+# Store chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
+# Display previous messages
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
 
+# Input box
+user_input = st.chat_input("Ask your question...")
+
+# Chatbot logic
 def anatomy_response(user_input):
     user_input = user_input.lower()
 
-    if "heart" in user_input:
+    if any(word in user_input for word in ["heart", "cardiac", "circulation"]):
         return """
-HEART
+ **HEART**
 
-The heart is a hollow, muscular organ responsible for pumping blood 
-throughout the circulatory system. It maintains continuous blood flow 
-to deliver oxygen and nutrients to tissues and remove carbon dioxide.
+The heart is a muscular organ that pumps blood throughout the body.
 
-Location:
-- Middle mediastinum of the thoracic cavity
-- Slightly tilted toward the left side
+**Key Points:**
+- 4 chambers: Right/Left Atrium & Ventricle
+- Controls blood circulation
+- Has valves to regulate flow
+- Electrical system controls heartbeat
 
-Structure:
-- Four chambers:
-    • Right Atrium
-    • Right Ventricle
-    • Left Atrium
-    • Left Ventricle
-- Septum separates right and left sides
-- Valves:
-    • Tricuspid valve
-    • Pulmonary valve
-    • Mitral (Bicuspid) valve
-    • Aortic valve
-
-Circulation:
-- Pulmonary circulation (Heart ↔ Lungs)
-- Systemic circulation (Heart ↔ Body)
-
-Electrical System:
-- SA node (natural pacemaker)
-- AV node
-- Bundle of His
-- Purkinje fibers
-
-Major Blood Vessels:
-- Aorta
-- Pulmonary arteries
-- Pulmonary veins
-- Superior vena cava
-- Inferior vena cava
+**Function:**
+Supplies oxygen & nutrients and removes waste.
 """
 
-    elif "brain" in user_input:
+    elif any(word in user_input for word in ["brain", "nervous", "thinking"]):
         return """
-BRAIN
+ **BRAIN**
 
-The brain is the central control organ of the nervous system.
-It regulates voluntary and involuntary functions and enables cognition.
+The brain controls all body activities and thinking.
 
-Location:
-- Cranial cavity
-- Protected by skull, meninges, and cerebrospinal fluid
+**Main Parts:**
+- Cerebrum → thinking, memory
+- Cerebellum → balance
+- Brainstem → breathing, heartbeat
 
-Major Parts:
-
-Cerebrum:
-- Largest part of the brain
-- Controls thinking, memory, speech, voluntary movement
-- Divided into frontal, parietal, temporal, and occipital lobes
-
-Cerebellum:
-- Coordinates balance
-- Controls fine motor movement
-
-Brainstem:
-- Includes midbrain, pons, medulla oblongata
-- Controls breathing, heart rate, reflexes
-
-Protection:
-- Skull
-- Meninges (Dura mater, Arachnoid mater, Pia mater)
-- Cerebrospinal fluid
+**Function:**
+Controls voluntary & involuntary actions.
 """
 
-    elif "lungs" in user_input:
+    elif any(word in user_input for word in ["lungs", "breathing", "respiratory"]):
         return """
-LUNGS
+ **LUNGS**
 
-The lungs are paired respiratory organs responsible for gas exchange.
+The lungs help in breathing and gas exchange.
 
-Location:
-- Thoracic cavity
-- Protected by rib cage
-- Right lung has 3 lobes
-- Left lung has 2 lobes
+**Structure:**
+- Trachea → Bronchi → Bronchioles → Alveoli
 
-Airway Structure:
-- Trachea
-- Bronchi
-- Bronchioles
-- Alveoli (site of gas exchange)
-
-Gas Exchange:
-- Oxygen diffuses into blood
-- Carbon dioxide diffuses out
-- Occurs at the alveolar-capillary membrane
-
-Additional Information:
-- Surfactant prevents alveolar collapse
-- Maintains blood pH balance
+**Function:**
+- Oxygen enters blood
+- Carbon dioxide leaves body
 """
 
-    elif "liver" in user_input:
+    elif any(word in user_input for word in ["liver", "detox", "metabolism"]):
         return """
-LIVER
+ **LIVER**
 
-The liver is the largest internal organ and a major metabolic center.
+The liver is a major metabolic organ.
 
-Location:
-- Upper right quadrant of abdomen
-- Below diaphragm
-
-Structure:
-- Right and left lobes
-- Made of hepatic lobules
-- Functional cells called hepatocytes
-
-Functions:
-- Detoxification of drugs and toxins
-- Metabolism of carbohydrates, fats, and proteins
-- Storage of glycogen
-- Production of bile
-- Synthesis of clotting factors
-
-Blood Supply:
-- Hepatic artery (oxygen-rich blood)
-- Portal vein (nutrient-rich blood)
-
-Additional Role:
-- Immune defense via Kupffer cells
+**Functions:**
+- Detoxifies harmful substances
+- Produces bile
+- Stores energy (glycogen)
+- Processes nutrients
 """
 
-    elif "kidney" in user_input or "kidneys" in user_input:
+    elif any(word in user_input for word in ["kidney", "kidneys", "urine"]):
         return """
-KIDNEYS
+ **KIDNEYS**
 
-The kidneys are bean-shaped organs responsible for filtration 
-and maintaining internal balance (homeostasis).
+Kidneys filter blood and remove waste.
 
-Location:
-- Retroperitoneal space
-- On either side of vertebral column
+**Structure:**
+- Nephrons (functional unit)
 
-Structure:
-- Renal cortex
-- Renal medulla
-- Renal pelvis
-
-Functional Unit:
-- Nephron
-    • Glomerulus (filtration)
-    • Bowman’s capsule
-    • Loop of Henle
-    • Collecting duct
-
-Functions:
-- Removes nitrogenous wastes
-- Regulates electrolyte balance
-- Controls blood pressure (Renin)
-- Produces erythropoietin (RBC production)
-- Maintains acid-base balance
-
-Produces urine for excretion
+**Functions:**
+- Remove toxins
+- Maintain fluid balance
+- Control blood pressure
 """
 
     else:
-        return "Please ask about Heart, Brain, Lungs, Liver, or Kidneys."
+        return "⚠️ Please ask about Heart, Brain, Lungs, Liver, or Kidneys."
 
+# When user sends message
+if user_input:
+    # Add user message
+    st.session_state.messages.append({
+        "role": "user",
+        "content": user_input
+    })
 
-if question:
-    answer = anatomy_response(question)
-    st.success(answer)
+    # Get bot response
+    response = anatomy_response(user_input)
+
+    # Add bot message
+    st.session_state.messages.append({
+        "role": "assistant",
+        "content": response
+    })
+
+    st.rerun()
+
+# Sidebar
+st.sidebar.title(" Topics")
+st.sidebar.write("• Heart\n• Brain\n• Lungs\n• Liver\n• Kidneys")
+
+# Clear chat button
+if st.sidebar.button("🧹 Clear Chat"):
+    st.session_state.messages = []
+    st.rerun()
