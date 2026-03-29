@@ -1,4 +1,5 @@
- import streamlit as st
+import streamlit as st
+st.write("🚨 NEW VERSION RUNNING 🚨")
 import google.generativeai as genai
 
 # 🔑 PUT YOUR REAL API KEY HERE
