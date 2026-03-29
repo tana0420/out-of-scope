@@ -1,128 +1,75 @@
- import streamlit as st
-genai.configure(api_key=" AIzaSyAOPwUhUgGZeOlcynfPGCjc_c6oxKP12LE")
+  import streamlit as st
+import google.generativeai as genai
+
+# 🔑 ADD YOUR API KEY HERE
+genai.configure(api_key="YOUR_GEMINI_API_KEY")
+
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 # Page config
 st.set_page_config(page_title="Anatomy AI Tutor", page_icon="🧠")
 
-st.title(" Anatomy AI Tutor")
-st.write("Ask about: Heart, Brain, Lungs, Liver, or Kidneys")
+st.title("🧠 Anatomy AI Tutor")
+st.caption("💬 Ask anything about human anatomy")
 
 # Store chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Display previous messages
+# Display chat
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# Input box
+# Input
 user_input = st.chat_input("Ask your question...")
 
-# Chatbot logic
-def anatomy_response(user_input):
-    user_input = user_input.lower()
+# ✅ AI FUNCTION (NEW)
+def get_ai_response(user_input):
+    prompt = f"""
+    You are a professional anatomy tutor.
 
-    if any(word in user_input for word in ["heart", "cardiac", "circulation"]):
-        return """
- **HEART**
+    Explain in:
+    - Simple language
+    - Bullet points
+    - Clear headings
 
-The heart is a muscular organ that pumps blood throughout the body.
-
-**Key Points:**
-- 4 chambers: Right/Left Atrium & Ventricle
-- Controls blood circulation
-- Has valves to regulate flow
-- Electrical system controls heartbeat
-
-**Function:**
-Supplies oxygen & nutrients and removes waste.
-"""
-
-    elif any(word in user_input for word in ["brain", "nervous", "thinking"]):
-        return """
- **BRAIN**
-
-The brain controls all body activities and thinking.
-
-**Main Parts:**
-- Cerebrum → thinking, memory
-- Cerebellum → balance
-- Brainstem → breathing, heartbeat
-
-**Function:**
-Controls voluntary & involuntary actions.
-"""
-
-    elif any(word in user_input for word in ["lungs", "breathing", "respiratory"]):
-        return """
- **LUNGS**
-
-The lungs help in breathing and gas exchange.
-
-**Structure:**
-- Trachea → Bronchi → Bronchioles → Alveoli
-
-**Function:**
-- Oxygen enters blood
-- Carbon dioxide leaves body
-"""
-
-    elif any(word in user_input for word in ["liver", "detox", "metabolism"]):
-        return """
- **LIVER**
-
-The liver is a major metabolic organ.
-
-**Functions:**
-- Detoxifies harmful substances
-- Produces bile
-- Stores energy (glycogen)
-- Processes nutrients
-"""
-
-    elif any(word in user_input for word in ["kidney", "kidneys", "urine"]):
-        return """
- **KIDNEYS**
-
-Kidneys filter blood and remove waste.
-
-**Structure:**
-- Nephrons (functional unit)
-
-**Functions:**
-- Remove toxins
-- Maintain fluid balance
-- Control blood pressure
-"""
-
-    else:
-        return "⚠️ Please ask about Heart, Brain, Lungs, Liver, or Kidneys."
+    Question: {user_input}
+    """
+    response = model.generate_content(prompt)
+    return response.text
 
 # When user sends message
 if user_input:
-    # Add user message
     st.session_state.messages.append({
         "role": "user",
         "content": user_input
     })
 
-    # Get bot response
-    response = anatomy_response(user_input)
+    # 🔥 THIS IS THE FIX (AI USED HERE)
+    with st.chat_message("assistant"):
+        with st.spinner("Thinking..."):
+            reply = get_ai_response(user_input)
+            st.markdown(reply)
 
-    # Add bot message
     st.session_state.messages.append({
         "role": "assistant",
-        "content": response
+        "content": reply
     })
 
-    st.rerun()
-
 # Sidebar
-st.sidebar.title(" Topics")
-st.sidebar.write("• Heart\n• Brain\n• Lungs\n• Liver\n• Kidneys")
+st.sidebar.title("📚 Topics")
+st.sidebar.write("""
+• Heart  
+• Brain  
+• Lungs  
+• Liver  
+• Kidneys  
+• Bones  
+• Muscles  
+• Nervous System  
+""")
 
-# Clear chat button
 if st.sidebar.button("🧹 Clear Chat"):
     st.session_state.messages = []
     st.rerun()
