@@ -1,4 +1,5 @@
  import streamlit as st
+genai.configure(api_key=" AIzaSyAOPwUhUgGZeOlcynfPGCjc_c6oxKP12LE")
 
 # Page config
 st.set_page_config(page_title="Anatomy AI Tutor", page_icon="🧠")
