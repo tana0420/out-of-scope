@@ -12,4 +12,5 @@
 12. **[Interactive Visualization of Heart Anatomy using Unity AR](https://medium.com/@ttanisha_be23/interactive-visualization-of-heart-anatomy-using-unity-ar-dd6e5b8de873)**
 13. **[Visualizing Heartbeat using Unity AR](https://medium.com/@vivankhat20/visualizing-heartbeat-using-unity-ar-d31c41658708)**
 14. **[User Interaction and Touch Handling in Android AR Apps](https://medium.com/@vivankhat20/user-interaction-and-touch-handling-in-android-ar-apps-7c8ab7c230d3)**
-    
+15. **[Synchronizing Heartbeat Animation with “Lub-Dub” Sound in Unity AR](https://medium.com/@igarg_be23/synchronizing-heartbeat-animation-with-lub-dub-sound-in-unity-ar-23e3e80d8fc7)**
+16. **[AI Chatbot Integration for Interactive Learning in AR Heart Model](https://medium.com/@igarg_be23/ai-chatbot-integration-for-interactive-learning-in-ar-heart-model-4184df6c697e)**
