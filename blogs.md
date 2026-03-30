@@ -10,3 +10,6 @@
 10. **[From Blender to Unity: Building Our 3D Anatomy Development Pipeline](https://medium.com/@igarg_be23/from-blender-to-unity-building-our-3d-anatomy-development-pipeline-672e61ecc52c)**
 11. **[Deployment of AR Heart Model as an APK using Unity](https://medium.com/@ttanisha_be23/deployment-of-ar-heart-model-as-an-apk-using-unity-7b65c4195844)**
 12. **[Interactive Visualization of Heart Anatomy using Unity AR](https://medium.com/@ttanisha_be23/interactive-visualization-of-heart-anatomy-using-unity-ar-dd6e5b8de873)**
+13. **[Visualizing Heartbeat using Unity AR](https://medium.com/@vivankhat20/visualizing-heartbeat-using-unity-ar-d31c41658708)**
+14. **[User Interaction and Touch Handling in Android AR Apps](https://medium.com/@vivankhat20/user-interaction-and-touch-handling-in-android-ar-apps-7c8ab7c230d3)**
+    
