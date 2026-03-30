@@ -33,7 +33,7 @@ This project presents an AR-based anatomy learning application where a 2D textbo
 - Free/Open-source 3D anatomical models
 
 ## Download App
-- Click **ARAnatomy.apk** under Assets to install the app.
+- Click **ARAnatomy.apk** under Releases to install the app.
 
 ## Team Members
 - Tanisha (102315108)
