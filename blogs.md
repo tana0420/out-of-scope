@@ -14,3 +14,9 @@
 14. **[User Interaction and Touch Handling in Android AR Apps](https://medium.com/@vivankhat20/user-interaction-and-touch-handling-in-android-ar-apps-7c8ab7c230d3)**
 15. **[Synchronizing Heartbeat Animation with “Lub-Dub” Sound in Unity AR](https://medium.com/@igarg_be23/synchronizing-heartbeat-animation-with-lub-dub-sound-in-unity-ar-23e3e80d8fc7)**
 16. **[AI Chatbot Integration for Interactive Learning in AR Heart Model](https://medium.com/@igarg_be23/ai-chatbot-integration-for-interactive-learning-in-ar-heart-model-4184df6c697e)**
+17. **[How I Built the Brain & Liver in Unity](https://medium.com/@ttanisha_be23/how-i-built-the-brain-liver-in-unity-398fe98ec939)**
+18. **[How I Built the Lungs & Breathing Animation in Unity](https://medium.com/@ttanisha_be23/how-i-built-the-lungs-breathing-animation-in-unity-17ad20d66208)**
+19. **[I Built an Anatomy Chatbot for My AR/VR Website — Here’s How It Actually Helps](https://medium.com/@igarg_be23/i-built-an-anatomy-chatbot-for-my-ar-vr-website-heres-how-it-actually-helps-b94bc82263a9)**
+20. **[Exploring Human Anatomy Through an Interactive AR/VR Website](https://medium.com/@igarg_be23/exploring-human-anatomy-through-an-interactive-ar-vr-website-1b681a681eab)**
+21. **[Bringing the Stomach & Kidneys to Life in Unity and How I Built the Animations](https://medium.com/@vivankhat20/bringing-the-stomach-kidneys-to-life-in-unity-and-how-i-built-the-animations-bd7b06031819)**
+22. **[How I Built the APK for My AR/VR Anatomy App and the Problems I Faced](https://medium.com/@vivankhat20/how-i-built-the-apk-for-my-ar-vr-anatomy-app-and-the-problems-i-faced-2db0371f479a)**
